@@ -41,7 +41,7 @@ function ReferralPopup({ open, onClose }) {
   const handleSubmit = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/referrals', {
+      const response = await axios.post(process.env.PRODUCTION, {
         referrerName: referrer.name,
         referrerEmail: referrer.email,
         referrerPhone: referrer.phone,
